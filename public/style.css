@@ -78,13 +78,32 @@ input[type="button"], input[type="submit"] {
 	border-radius: 0.5em;
 }
 
+@keyframes errors {
+	to {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+
+	}
+}
+
+.error {
+	font-size: 38%;
+	color: #e66962;
+	font-weight: bold;
+	animation: errors 0s ease-in 2s forwards;
+}
+
 #avo {
 	margin-bottom: -2%;
+	border-radius: 0%;
 }
-.shopInfo{
+
+.shopInfo {
 	margin-top: 5%;
 	font-size: 60px;
 }
+
 #backBtn {
 	font-size: 135%;
 }
@@ -95,7 +114,9 @@ input[type="button"], input[type="submit"] {
 	display: flex;
 	flex-direction: row;
 }
-
+img{
+	border-radius: 25px;
+}
 @media (max-width:768px) {
 	.avoIndex {
 		display: flex;

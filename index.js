@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 3019;
 const pg = require("pg");
 const Pool = pg.Pool;
+const session = require('express-session');
+const flash = require('express-flash');
 const avoShopper = require('./avo-shopper');
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -18,6 +20,12 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
+app.use(session({
+	secret: "avo",
+	resave: false,
+	saveUninitialized: true
+}));
+app.use(flash());
 let useSSL = false;
 let local = process.env.LOCAL || false;
 if (process.env.DATABASE_URL && !local) {
@@ -52,8 +60,10 @@ app.post('/addNewDeals', async function (req, res) {
 		await avoApp.createDeal(shopId, qty, price)
 		res.redirect('/')
 	}
-	else{
-		res.redirect('/addNewDeals')
+	else {
+		res.redirect('/addNewDeals'),
+			req.flash('info', 'Fields cannot be empty');
+
 	}
 })
 app.get('/viewShops', async function (req, res) {
@@ -84,8 +94,16 @@ app.get('/addShop', async function (req, res) {
 	res.render('addShop');
 });
 app.post('/addShop', async function (req, res) {
-	await avoApp.createShop(req.body.addShop)
-	res.redirect('viewShops');
+	if (req.body.addShop) {
+
+		await avoApp.createShop(req.body.addShop)
+		res.redirect('viewShops');
+	}
+	else {
+		res.redirect('/addShop');
+		req.flash('info', 'Fields cannot be empty');
+
+	}
 });
 // start the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function () {
