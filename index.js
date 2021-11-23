@@ -85,7 +85,6 @@ app.get('/addShop', async function (req, res) {
 });
 app.post('/addShop', async function (req, res) {
 	await avoApp.createShop(req.body.addShop)
-	console.log(req.body.addShop);
 	res.redirect('viewShops');
 });
 // start the server and start listening for HTTP request on the PORT number specified...
