@@ -1,0 +1,31 @@
+<a href="/">Home</a>
+
+<h1>Get recommended deals now!</h1>
+<p>enter your desired price and we’ll show you the best deals!</p>
+<form action="/recommendedDeals" method="post">
+    <div class="m1">
+        <label for="price"></label>
+        <input class="m-1 p-1" type="text" name="price" id="">
+    </div>
+    <div class="m1">
+        <input class="m-1 p-1" type="submit">
+    </div>
+  <table>
+    <tr>
+        <th>Shop Name</th>
+        <th>Price</th>
+        <th>qty</th>
+
+        <th></th>
+    </tr>
+    {{#each deals}}
+    <tr>
+        <td>{{name}}</td>
+        <td>R{{price}}</td>
+        <td>{{qty}}</td>
+        <td>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+</form>

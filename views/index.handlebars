@@ -1,1 +1,40 @@
-<h2>Best deals</h2>
+<body>
+
+    <a href="/addNewDeals">Add New Avo Deals</a>
+    <a href="/viewShops">View Shops</a>
+    <a href="/recommendedDeals">Get recommended deals!</a>
+    <div class="avoIndex">
+        <div class="col-6">
+
+            <img src="https://i.ndtvimg.com/i/2018-04/avocado_650x400_51524642335.jpg" alt="" width="270px">
+        </div>
+        <div class="col-6">
+
+            <img src="https://renaissance.mom/wp-content/uploads/2021/04/avocado.jpeg" alt="" width="250px">
+        </div>
+        <div class="col-6">
+
+            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Favocado-yogurt-trader-joes-ft-blog0617_0.jpg%3Fitok%3Dn8fSvDoj" alt="" width="250px">
+        </div>
+    </div>
+    <div class="center">
+        <table>
+            <h1>Top 5 Avo Deals</h1>
+            <tr>
+                <th>Shop Name</th>
+                <th>Price</th>
+                <th>qty</th>
+                <th></th>
+            </tr>
+            {{#each topFive}}
+            <tr>
+                <td>{{shop_name}}</td>
+                <td>R{{price}}</td>
+                <td>{{qty}}</td>
+                <td>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</body>

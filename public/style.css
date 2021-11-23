@@ -1,10 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
 body {
-	background-color: lightseagreen;
 	color: whitesmoke;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;
+	background: hsla(139, 70%, 75%, 1);
+
+	background: linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+
+	background: -moz-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+
+	background: -webkit-linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#95ECB0", endColorstr="#F3F98A", GradientType=1);
 }
 
-.container{
+body a {
+	text-decoration: none;
+	padding: 2%;
+}
+
+body a:hover {
+	color: rgb(140, 177, 84);
+
+}
+
+.container {
 	margin: auto;
 	width: 80%;
+}
+
+table {
+	width: 100%;
+}
+
+hr {
+	color: rgb(143, 143, 107);
+
+}
+
+th,
+td {
+	padding: 12px 15px;
+	border-bottom: 3px solid rgb(143, 143, 107);
+}
+
+li {
+	list-style: none;
+}
+
+.title {
+	color: rgb(140, 177, 84);
+	font-size: 60px;
+	font-family: 'Caveat', cursive !important;
+}
+
+input[type=text], select {
+	width: 50%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin: 2%;
+}
+
+input[type="button"], input[type="submit"] {
+	background-color: rgb(189, 184, 184);
+	border: 2px solid rgb(189, 184, 184);
+	color: rgb(26, 24, 24);
+	padding: 8px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border-radius: 0.5em;
+}
+
+#avo {
+	margin-bottom: -2%;
+}
+.shopInfo{
+	margin-top: 5%;
+	font-size: 60px;
+}
+#backBtn {
+	font-size: 135%;
+}
+
+.avoIndex {
+	margin-left: 6%;
+	margin-top: 4%;
+	display: flex;
+	flex-direction: row;
+}
+
+@media (max-width:768px) {
+	.avoIndex {
+		display: flex;
+		flex-direction: column;
+	}
 }

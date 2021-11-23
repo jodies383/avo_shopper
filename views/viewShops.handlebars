@@ -1,0 +1,21 @@
+<a href="/">Home</a>
+<a href="/addShop">Add new shop</a>
+<h1>Shops</h1>
+{{#each shop}}
+
+<a href="/viewShops/{{id}}">
+    <li>{{name}}</li>
+</a>
+{{/each}}
+
+{{#each avoDeals}}
+<div class="center" id="backBtn">
+
+<a href="/viewShops">View All Shops</a>
+</div>
+<div class="shopInfo">
+<tr>
+  At this shop you can get {{qty}} avocado(s) for R{{price}}
+</tr>
+</div>
+{{/each}}

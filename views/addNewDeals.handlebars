@@ -1,0 +1,24 @@
+<a href="/">Home</a>
+<h1>Add New Avo Deals</h1>
+
+<form action="/addNewDeals" method="post">
+    <div class="m1">
+        <label for="qty">Qty</label>
+        <input class="m-1 p-1" type="text" name="qty" id="">
+    </div>
+    <div class="m1">
+        <label for="price">Price</label>
+        <input class="m-1 p-1" type="text" name="price" id="">
+    </div>
+    <div class="m1">
+        <label for="shops">Shops</label>
+        <select name="shops" id="shops">
+             {{#each shop}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="m1">
+        <input class="m-1 p-1" type="submit">
+    </div>
+</form>
