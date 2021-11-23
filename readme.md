@@ -44,5 +44,5 @@ To get going:
 * The link to your deployed app. 
 
 
-
+[![Build Status](https://app.travis-ci.com/jodies383/avo_shopper.svg?branch=main)](https://app.travis-ci.com/jodies383/avo_shopper)
 
